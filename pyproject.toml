@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ia-07-embeddings-service"
+version = "0.1.0"
+description = "Servicio de embeddings OpenAI-compatible"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "fastapi>=0.110", "uvicorn>=0.27", "pydantic>=2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
